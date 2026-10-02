@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://martabetanco.github.io/Bella_Massage_Martha1.github.io/sitemap.xml
