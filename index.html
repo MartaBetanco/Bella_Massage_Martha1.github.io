@@ -38,6 +38,25 @@ label{display:block;font-size:13px;margin:12px 0 5px;color:#59655d}input,select,
 
   gtag('config', 'AW-18490507269');
 </script>
+<!-- Event snippet for Reserva de cita conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18490507269/szV0CLW5tpQdEIWA-_BE',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
 <body>
 <header><nav>
@@ -47,7 +66,7 @@ label{display:block;font-size:13px;margin:12px 0 5px;color:#59655d}input,select,
 <div class="hero"><div class="kicker">Tamarindo · Guanacaste</div>
 <h1>Bienestar,<br>relajación y cuidado.</h1>
 <p class="sub">Masajes terapéuticos y experiencias de bienestar a domicilio, con atención personalizada en las principales zonas de Guanacaste.</p>
-<a class="btn" href="https://wa.me/50662168757">Reservar por WhatsApp</a></div></header>
+<a class="btn"onclick="return gtag_report_conversion(this.href);" href="https://wa.me/50662168757">Reservar por WhatsApp</a></div></header>
 
 <section class="services" id="servicios"><h2 class="title">Menú de masajes</h2>
 <p class="intro">Conoce nuestras opciones de masaje y elige la experiencia que mejor se adapte a tus necesidades.</p>
